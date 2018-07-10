@@ -2,19 +2,19 @@ package practice07;
 
 public class Student extends Person{
 
-    int Klass;
+    Klass klass;
 
-    public Student (String name ,int age,int number){
+    public Student (String name ,int age,Klass klass){
         super(name,age);
-        this.Klass=number;
+        this.klass=klass;
     }
 
-    public int getKlass() {
-        return Klass;
+    public Klass getKlass() {
+        return klass;
     }
 
-    public void setKlass(int klass) {
-        Klass = klass;
+    public void setKlass(Klass klass) {
+        this.klass = klass;
     }
 
     public String getName() {
@@ -32,10 +32,14 @@ public class Student extends Person{
     public void setAge(int age) {
         this.age = age;
     }
-
+     public int getKlassNumber(){
+        return klass.getNumber();
+     }
 
     public  String introduce(){
-        return super.introduce()+" I am a Student. I am at Class "+getKlass()+".";
+        return super.introduce()+" I am a Student. I am at Class "+getKlassNumber()+".";
     }
+
+
 }
 
