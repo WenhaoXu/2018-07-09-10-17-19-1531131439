@@ -1,6 +1,7 @@
 package practice13;
 
 import java.util.LinkedList;
+import java.util.concurrent.Callable;
 
 public class Teacher extends Person implements CallTeacherAndComputer {
 
@@ -74,12 +75,7 @@ public class Teacher extends Person implements CallTeacherAndComputer {
     }
 
     public Boolean isTeaching(Student student){
-        for (int i=0;i<Classes.size();i++) {
-            if (student.getKlassNumber() == Classes.get(i).getNumber())
-                return true;
-
-        }
-        return false;
+      return   Classes.stream().filter(klass -> klass.isIn(student)).count()==1;
     }
 
     @Override

@@ -44,5 +44,11 @@ public class Klass extends Subject {
         Notify(student);
     }
 
+
+    public boolean isIn(Student student){
+      return   student.getKlassNumber()==number;
+
+    }
+
 }
 
